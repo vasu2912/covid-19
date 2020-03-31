@@ -41,28 +41,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <IonApp>
+      <IonApp mode="ios">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>CoVid-19 Tracker</IonTitle>
+            <IonTitle className="title">CoVid-19 Tracker</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent color="dark">
           <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Confirmed Cases</ion-card-subtitle>
+            <ion-card-header color="warning">
+              <ion-card-title>Total Confirmed Cases</ion-card-title>
               <ion-card-title>{this.state.confirmed}</ion-card-title>
             </ion-card-header>
           </ion-card>
           <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Recovered Cases</ion-card-subtitle>
-              <ion-card-title>{this.state.recovered}</ion-card-title>
+            <ion-card-header color="success">
+              <ion-card-title>Recovered Cases</ion-card-title>
+              <ion-card-title> {this.state.recovered}</ion-card-title>
             </ion-card-header>
           </ion-card>
-          <ion-card>
+          <ion-card color="danger">
             <ion-card-header>
-              <ion-card-subtitle>Deaths</ion-card-subtitle>
+              <ion-card-title color="light">Deaths</ion-card-title>
               <ion-card-title>{this.state.deaths}</ion-card-title>
             </ion-card-header>
           </ion-card>

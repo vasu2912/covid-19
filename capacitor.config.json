@@ -1,0 +1,8 @@
+{
+  "appId": "com.vasu.andriod",
+  "appName": "covid19",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
