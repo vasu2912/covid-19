@@ -39,5 +39,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Source API's
 
-https://github.com/mathdroid/covid-19-api from github.com/mathdroid
+https://github.com/mathdroid/covid-19-api from github.com/mathdroid<br/>
 https://coronavirus-tracker-api.herokuapp.com/
