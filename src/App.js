@@ -24,6 +24,9 @@ class App extends React.Component {
     confirmed: 0,
     recovered: 0,
     deaths: 0,
+    inconfirmed: 0,
+    inrecovered: 0,
+    indeaths: 0,
     count: 0,
     loading: true,
     date: new Date()
@@ -32,6 +35,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getData();
     this.country();
+    this.india();
     setTimeout(() => {
       this.setState({
         loading: false
@@ -57,6 +61,14 @@ class App extends React.Component {
       deaths: res.data.deaths.value
     });
   }
+  async india() {
+    const ind = await Axios.get("https://covid19.mathdro.id/api/countries/IN");
+    this.setState({
+      inconfirmed: ind.data.confirmed.value,
+      inrecovered: ind.data.recovered.value,
+      indeaths: ind.data.deaths.value
+    });
+  }
   render() {
     return (
       <IonApp mode="ios">
@@ -75,10 +87,10 @@ class App extends React.Component {
           </ion-text>
           <ion-text class="total">
             {this.state.loading ? (
-              <Stretch color="white" />
+              <Stretch color="white" size="30px" />
             ) : (
               <div class="ion-text-center">
-                Total Effected Countries : {this.state.count}
+                <h2 id="tot">Total Effected Countries : {this.state.count}</h2>
               </div>
             )}
           </ion-text>
@@ -100,10 +112,22 @@ class App extends React.Component {
               <ion-card-title>{this.state.deaths}</ion-card-title>
             </ion-card-header>
           </ion-card>
+          <Ion-text>
+            <div class="ion-text-center">
+              <h3 id="indtitle">Total Cases - India</h3>
+              <p id="numbers">{this.state.inconfirmed}</p>
+              <h3 id="indtitle">Recovered</h3>
+              <p id="numbers">{this.state.inrecovered}</p>
+              <h3 id="indtitle">Deaths</h3>
+              <p id="numbers">{this.state.indeaths}</p>
+            </div>
+          </Ion-text>
         </IonContent>
         <ion-footer class="ion-no-border" translucent="true">
           <ion-toolbar color="dark">
-            <ion-title>github.com/vasu2912</ion-title>
+            <ion-title className="bottomtitle">
+              <a href="https://github.com/vasu2912/">github.com/vasu2912</a>
+            </ion-title>
           </ion-toolbar>
         </ion-footer>
       </IonApp>

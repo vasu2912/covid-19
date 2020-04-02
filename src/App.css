@@ -35,4 +35,28 @@
 
 h1 {
   padding-left: 19px;
+  margin: 10px;
+}
+
+.bottomtitle {
+  font-size: 1rem;
+}
+
+#indtitle {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 2px;
+}
+
+#numbers {
+  font-size: 45px;
+  font-weight: bold;
+  color: cornflowerblue;
+  margin: 2px;
+}
+
+#tot {
+  font-weight: 550;
+  color: cornflowerblue;
+  margin: 14px;
 }
