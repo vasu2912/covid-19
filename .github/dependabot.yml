@@ -1,0 +1,36 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@ionic/core"
+    versions:
+    - 5.5.2
+    - 5.5.3
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.2
+    - 11.2.3
+  - dependency-name: "@ionic/react"
+    versions:
+    - 5.5.2
+    - 5.5.3
+  - dependency-name: "@testing-library/user-event"
+    versions:
+    - 12.6.0
+    - 12.6.2
+  - dependency-name: "@capacitor/cli"
+    versions:
+    - 2.4.5
+  - dependency-name: "@testing-library/jest-dom"
+    versions:
+    - 5.11.8
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
